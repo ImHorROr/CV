@@ -8,8 +8,6 @@ public class MovingCam : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera cam;
     [SerializeField] float camSpeed = 5;
     CinemachineTrackedDolly dolly;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +17,6 @@ public class MovingCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(dolly.m_Path.PathLength);
         if (Input.GetKey(KeyCode.W))
         {
             dolly.m_PathPosition = Mathf.Clamp(dolly.m_PathPosition + camSpeed * Time.deltaTime, 0, dolly.m_Path.PathLength);
@@ -28,6 +25,9 @@ public class MovingCam : MonoBehaviour
         {
             dolly.m_PathPosition = Mathf.Clamp(dolly.m_PathPosition - camSpeed * Time.deltaTime, 0 ,dolly.m_Path.PathLength);
         }
-
+    }
+    public void Telepoert(float pos)
+    {
+        dolly.m_PathPosition = pos;
     }
 }
