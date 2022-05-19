@@ -8,22 +8,23 @@ public class SwitchControlsType : MonoBehaviour
 {
     [SerializeField] CinemachineInputProvider mouseInputProvider;
     [SerializeField] CinemachineInputProvider touchInputProvider;
+    [SerializeField] CinemachineVirtualCamera cinvrcamera;
     CinemachinePOV camera;
     MyPlayerInput myPlayerInput;
     private void Start()
     {
         touchInputProvider.enabled = false;
         mouseInputProvider.enabled = true;
-        camera = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachinePOV>();
+        camera = cinvrcamera.GetCinemachineComponent<CinemachinePOV>();
     }
     private void Update()
     {
         if (myPlayerInput == null) return;
         if (myPlayerInput.MovmentTouch.enabled)
         {
-            Vector2 delta = myPlayerInput.MovmentTouch.Look.ReadValue<Vector2>();
-            camera.m_VerticalAxis.Value += delta.y * 200 * Time.deltaTime;
-            camera.m_HorizontalAxis.Value += delta.x * 200 * Time.deltaTime;
+           // Vector2 delta = myPlayerInput.MovmentTouch.Look.ReadValue<Vector2>();
+           // camera.m_VerticalAxis.Value += delta.y * 200 * Time.deltaTime;
+        //    camera.m_HorizontalAxis.Value += delta.x * 200 * Time.deltaTime;
         }
 
     }
