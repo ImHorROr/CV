@@ -4,36 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using PathCreation;
-public class Mover : MonoBehaviour
+using PathCreation.Examples;
+public class Follower : MonoBehaviour
 {
+    [SerializeField] float Speed = 100;
+    [SerializeField] PathCreator path;
+
+    [SerializeField]GeneratePathExample generatePath;
+
     MyPlayerInput myPlayerInput;
     SwitchControlsType switchControls;
-    [SerializeField]FollowPath patrolPath2;
-    [SerializeField]float Speed = 100;
+
+
+    [SerializeField]float dist;
+
+
     private void Awake()
     {
         myPlayerInput = new MyPlayerInput();
         myPlayerInput.Movment.Enable();
-
-        //myPlayerInput.Movment.MoveBackward.performed += decCurrent;
-        //myPlayerInput.Movment.MoveForward.performed += incCurrent;
     }
-
-    //private void incCurrent(InputAction.CallbackContext obj)
-    //{
-    //    throw new NotImplementedException();
-    //}
-
-    //private void decCurrent(InputAction.CallbackContext obj)
-    //{
-    //    throw new NotImplementedException();
-    //}
 
     void Start()
     {
         switchControls = GetComponent<SwitchControlsType>();
+        transform.position = generatePath.waypoints[0].position;
+
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (myPlayerInput.Movment.enabled)
@@ -45,7 +44,6 @@ public class Mover : MonoBehaviour
             MovmentWithTouch();
 
         }
-
     }
     private void MovmentWithKeyBoard()
     {
@@ -76,22 +74,15 @@ public class Mover : MonoBehaviour
     }
     void Forward()
     {
-        //Vector3 pos = Vector3.MoveTowards(transform.position, patrolPath2.GetCurrentWaypoint(), Speed * Time.deltaTime);
-        //rigidbody.MovePosition(pos);
-        //if(patrolPath2.AtWaypoint())
-        //{
-        //    patrolPath2.AddWaypoint();
-        //}
+        dist += Speed * Time.deltaTime;
+        transform.position = path.path.GetPointAtDistance(dist);
+        //transform.rotation = path.path.GetRotationAtDistance(dist);
     }
     void BackWard()
     {
-        //Vector3 pos = Vector3.MoveTowards(transform.position, patrolPath2.GetLastWaypoint(), Speed * Time.deltaTime);
-        //rigidbody.MovePosition(pos);
-        //if (patrolPath2.AtWaypointReverse())
-        //{
-        //        patrolPath2.RemoveWaypoint();
-        //}
-
+        dist -= Speed * Time.deltaTime;
+        transform.position = path.path.GetPointAtDistance(dist);
+        //transform.rotation = path.path.GetRotationAtDistance(dist);
     }
     public void Switch()
     {
@@ -100,8 +91,10 @@ public class Mover : MonoBehaviour
 
     public void Teleport(int selected)
     {
-        print(selected);
-        //current = selected;
-      //  transform.position = Points[selected].position;
+        transform.position = generatePath.waypoints[selected].position;     
+    }
+    public void EditDistance(int distance)
+    {
+        dist = distance;
     }
 }
