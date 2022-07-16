@@ -14,7 +14,7 @@ public class Follower : MonoBehaviour
 
     MyPlayerInput myPlayerInput;
     SwitchControlsType switchControls;
-
+    EnemyLockOn lockOn;
 
     [SerializeField]float dist;
 
@@ -29,7 +29,7 @@ public class Follower : MonoBehaviour
     {
         switchControls = GetComponent<SwitchControlsType>();
         transform.position = generatePath.waypoints[0].position;
-
+        lockOn = GetComponent<EnemyLockOn>();
     }
 
     // Update is called once per frame
@@ -95,6 +95,7 @@ public class Follower : MonoBehaviour
     }
     public void EditDistance(int distance)
     {
+        lockOn.ResetTarget();
         dist = distance;
     }
 }
