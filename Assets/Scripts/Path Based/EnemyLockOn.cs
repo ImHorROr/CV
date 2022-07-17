@@ -22,6 +22,7 @@ public class EnemyLockOn : MonoBehaviour
     }
     public Transform ScanNearBy()
     {
+        //for some reason only capsul is detected
         Collider[] nearbyTargets = Physics.OverlapSphere(transform.position, noticeZone, targetLayers);
         Transform closestTarget = null;
         currentTarget = null;
@@ -29,17 +30,10 @@ public class EnemyLockOn : MonoBehaviour
         {
             return null; 
         }
-        for (int i = 0; i < nearbyTargets.Length; i++)
-        {
-            print(nearbyTargets[i]);
-
-        }
-
-
         closestTarget = nearbyTargets[0].transform;
 
         float Dist = Vector3.Distance(nearbyTargets[0].transform.position, transform.position);
-        if (Dist > 5)
+        if (Dist > noticeZone)
         {
             ResetTarget();
         }
@@ -67,10 +61,12 @@ public class EnemyLockOn : MonoBehaviour
             FoundTarget.Invoke();
         }
         enemyTarget_Locator.transform.position = currentTarget.position;
+
     }
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, noticeZone);   
     }
 }
