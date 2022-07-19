@@ -35,6 +35,12 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(myPlayerInput == null)
+        {
+            myPlayerInput = new MyPlayerInput();
+            myPlayerInput.Movment.Enable();
+
+        }
         if (myPlayerInput.Movment.enabled)
         {
             MovmentWithKeyBoard();

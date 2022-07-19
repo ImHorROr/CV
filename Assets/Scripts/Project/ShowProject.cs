@@ -12,6 +12,7 @@ public class ShowProject : MonoBehaviour
     RawImage rawImage;
     VideoPlayer videoPlayer;
     [SerializeField] Transform DetailsPanel;
+    [SerializeField] Transform WierdEffects;
 
     Details details;
 
@@ -55,6 +56,7 @@ public class ShowProject : MonoBehaviour
         DetailsPanel.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         details.currentProjectURL = string.Empty;
         DetailsPanel.gameObject.SetActive(false);
+        WierdEffects.gameObject.SetActive(false);
     }
     public void NextPhoto()
     {
