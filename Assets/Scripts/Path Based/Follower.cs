@@ -30,12 +30,14 @@ public class Follower : MonoBehaviour
         switchControls = GetComponent<SwitchControlsType>();
         transform.position = generatePath.waypoints[0].position;
         lockOn = GetComponent<EnemyLockOn>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(myPlayerInput == null)
+
+        if (myPlayerInput == null)
         {
             myPlayerInput = new MyPlayerInput();
             myPlayerInput.Movment.Enable();
@@ -83,6 +85,8 @@ public class Follower : MonoBehaviour
         dist += Speed * Time.deltaTime;
         transform.position = path.path.GetPointAtDistance(dist);
         //transform.rotation = path.path.GetRotationAtDistance(dist);
+        print(path.path.GetPointAtDistance(dist));
+
     }
     void BackWard()
     {
@@ -99,9 +103,10 @@ public class Follower : MonoBehaviour
     {
         transform.position = generatePath.waypoints[selected].position;     
     }
-    public void EditDistance(int distance)
+    public void EditDistance(float distance)
     {
         lockOn.ResetTarget();
         dist = distance;
     }
+    
 }
