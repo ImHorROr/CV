@@ -1,6 +1,7 @@
 using PathCreation.Examples;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,15 +18,11 @@ public class WaypointsTeleporter : MonoBehaviour
         follower = FindObjectOfType < Follower>();
         if (generatePath == null) return;
 
-        foreach (var waypoint in generatePath.waypoints)
+        foreach (var waypoint in generatePath.projectWaypoints)
         {
-            if (waypoint.GetComponent<Point>().isNearproject == false) 
-            {
-            }
-            else
-            {
-                buttons.Add(Instantiate(button, transform));
-            }
+            buttons.Add(Instantiate(button, transform));
+            button.GetComponentInChildren<TextMeshProUGUI>().text = waypoint.GetComponent<Point>().pointName();
+
         }
         foreach (var b in buttons)
         {

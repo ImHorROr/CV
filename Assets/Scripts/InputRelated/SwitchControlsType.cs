@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class SwitchControlsType : MonoBehaviour
 {
+
     [SerializeField] CinemachineInputProvider mouseInputProvider;
     [SerializeField] CinemachineInputProvider touchInputProvider;
     [SerializeField] CinemachineVirtualCamera cinvrcamera;
