@@ -98,12 +98,14 @@ public class Follower : MonoBehaviour
 
     public void Teleport(int selected)
     {
-        transform.position = generatePath.waypoints[selected].position;     
+        transform.position = generatePath.waypoints[selected].position;
+        EditDistance();
     }
-    public void EditDistance(float distance)
+    public void EditDistance()
     {
         lockOn.ResetTarget();
-        dist = distance;
+       //dist = distance;
+        dist = path.path.GetClosestDistanceAlongPath(transform.position);
     }
     
 }
