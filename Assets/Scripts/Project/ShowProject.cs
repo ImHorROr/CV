@@ -60,7 +60,6 @@ public class ShowProject : MonoBehaviour
     }
     public void NextPhoto()
     {
-        print(1);
         currentImage++;
 
 
@@ -69,6 +68,7 @@ public class ShowProject : MonoBehaviour
             currentImage = 0;
         }   
         rawImage.texture = project.images[currentImage];
+
         if (rawImage.texture.name == "Vid")
         {
             videoPlayer.Play();

@@ -53,11 +53,6 @@ public class DERESolver : MonoBehaviour
     }
     void Resolve()
     {
-        //{
-        //    while (material.GetFloat("_Cutoff") > 0)
-        //    {
-        //        material.SetFloat("_Cutoff", Mathf.Lerp(0, 1, t * speed));
-        //    }
         t += Time.deltaTime;
         material.SetFloat("_Cutoff", Mathf.SmoothDamp(material.GetFloat("_Cutoff"),0,ref t, speed));
         if (material.GetFloat("_Cutoff") <= 0)

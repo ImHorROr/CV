@@ -21,13 +21,11 @@ public class CameraBlends : MonoBehaviour
     }
     private void CamFocus()
     {
-        print("Found");
         mainCam.Priority = 0;
         camtoSwitchTO.Priority = 20;
     }
     public void unFocus()
     {
-        print("Lost");
         mainCam.Priority = 20;
         camtoSwitchTO.Priority = 0;
     }

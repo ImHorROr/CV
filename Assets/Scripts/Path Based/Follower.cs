@@ -84,15 +84,12 @@ public class Follower : MonoBehaviour
     {
         dist += Speed * Time.deltaTime;
         transform.position = path.path.GetPointAtDistance(dist);
-        //transform.rotation = path.path.GetRotationAtDistance(dist);
-        print(path.path.GetPointAtDistance(dist));
 
     }
     void BackWard()
     {
         dist -= Speed * Time.deltaTime;
         transform.position = path.path.GetPointAtDistance(dist);
-        //transform.rotation = path.path.GetRotationAtDistance(dist);
     }
     public void Switch()
     {

@@ -13,8 +13,7 @@ public class SwitchControlsType : MonoBehaviour
     MyPlayerInput myPlayerInput;
     private void Start()
     {
-        touchInputProvider.enabled = false;
-        mouseInputProvider.enabled = true;
+        EneableAninput(false, true);
         camera = cinvrcamera.GetCinemachineComponent<CinemachinePOV>();
     }
     private void Update()
@@ -35,16 +34,20 @@ public class SwitchControlsType : MonoBehaviour
         {
             myPlayerInput.Movment.Disable();
             myPlayerInput.MovmentTouch.Enable();
-            touchInputProvider.enabled = true;
-            mouseInputProvider.enabled = false;
+            EneableAninput(true, false);
         }
         else if(myPlayerInput.MovmentTouch.enabled)
         {
             myPlayerInput.MovmentTouch.Disable();
             myPlayerInput.Movment.Enable();
-            touchInputProvider.enabled = false;
-            mouseInputProvider.enabled = true;
+            EneableAninput(false,true);
 
         }
+    }
+
+    private void EneableAninput(bool touchInput, bool MouseInput)
+    {
+        touchInputProvider.enabled = touchInput;
+        mouseInputProvider.enabled = MouseInput;
     }
 }
