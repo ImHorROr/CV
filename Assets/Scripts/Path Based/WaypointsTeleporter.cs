@@ -17,10 +17,15 @@ public class WaypointsTeleporter : MonoBehaviour
         follower = FindObjectOfType < Follower>();
         if (generatePath == null) return;
 
-
         foreach (var waypoint in generatePath.waypoints)
         {
-            buttons.Add(Instantiate(button , transform));
+            if (waypoint.GetComponent<Point>().isNearproject == false) 
+            {
+            }
+            else
+            {
+                buttons.Add(Instantiate(button, transform));
+            }
         }
         foreach (var b in buttons)
         {

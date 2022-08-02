@@ -17,7 +17,7 @@ public class Follower : MonoBehaviour
     EnemyLockOn lockOn;
 
     [SerializeField]float dist;
-
+    Vector3 pos;
 
     private void Awake()
     {
@@ -98,14 +98,14 @@ public class Follower : MonoBehaviour
 
     public void Teleport(int selected)
     {
-        transform.position = generatePath.waypoints[selected].position;
+        transform.position = generatePath.projectWaypoints[selected].position;
         EditDistance();
     }
     public void EditDistance()
     {
         lockOn.ResetTarget();
-       //dist = distance;
         dist = path.path.GetClosestDistanceAlongPath(transform.position);
+        pos = path.path.GetPointAtDistance(dist);
     }
     
 }

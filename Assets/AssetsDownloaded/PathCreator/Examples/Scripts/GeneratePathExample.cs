@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace PathCreation.Examples {
     // Example of creating a path at runtime from a set of points.
@@ -8,6 +9,7 @@ namespace PathCreation.Examples {
 
         public bool closedLoop = true;
         public Transform[] waypoints;
+        public List<Transform> projectWaypoints = new List<Transform>();
         
         void Start () {
             if (waypoints.Length > 0) {
