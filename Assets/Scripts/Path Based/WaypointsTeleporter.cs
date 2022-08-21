@@ -10,12 +10,12 @@ public class WaypointsTeleporter : MonoBehaviour
     [SerializeField] GeneratePathExample generatePath;
     [SerializeField] Transform button;
     [SerializeField] List<Transform> buttons = new List<Transform>();
-    Follower follower;
+    //Follower follower;
     // Start is called before the first frame update
     void Start()
     {
         generatePath = FindObjectOfType<GeneratePathExample>();
-        follower = FindObjectOfType < Follower>();
+        //follower = FindObjectOfType < Follower>();
         if (generatePath == null) return;
 
         foreach (var waypoint in generatePath.projectWaypoints)
@@ -34,6 +34,6 @@ public class WaypointsTeleporter : MonoBehaviour
     }
     void info(int i)
     {
-        follower.Teleport(i);
+        //follower.Teleport(i);
     }
 }

@@ -37,7 +37,7 @@ public class Point : MonoBehaviour
     {
         return name.ToString();
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, noticeZone);

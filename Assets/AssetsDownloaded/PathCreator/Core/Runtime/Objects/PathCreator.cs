@@ -72,7 +72,7 @@ namespace PathCreation {
 #if UNITY_EDITOR
 
         // Draw the path when path objected is not selected (if enabled in settings)
-        void OnDrawGizmos () {
+        void OnDrawGizmosSelected () {
 
             // Only draw path gizmo if the path object is not selected
             // (editor script is resposible for drawing when selected)

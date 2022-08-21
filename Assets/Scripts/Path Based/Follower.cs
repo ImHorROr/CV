@@ -5,32 +5,33 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using PathCreation;
 using PathCreation.Examples;
+
 public class Follower : MonoBehaviour
 {
     [SerializeField] float Speed = 100;
     [SerializeField] PathCreator path;
 
-    [SerializeField]GeneratePathExample generatePath;
+    [SerializeField] GeneratePathExample generatePath;
 
-    MyPlayerInput myPlayerInput;
+    public MyPlayerInput myPlayerInput { get; set; }
     SwitchControlsType switchControls;
     EnemyLockOn lockOn;
 
     [SerializeField]float dist;
     Vector3 pos;
-
-    private void Awake()
+    public void Awake()
     {
         myPlayerInput = new MyPlayerInput();
-        myPlayerInput.Movment.Enable();
+        myPlayerInput.MovmentCont.Enable();
     }
 
-    void Start()
+     void Start()
     {
         switchControls = GetComponent<SwitchControlsType>();
         transform.position = generatePath.waypoints[0].position;
         lockOn = GetComponent<EnemyLockOn>();
 
+        
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class Follower : MonoBehaviour
         if (myPlayerInput == null)
         {
             myPlayerInput = new MyPlayerInput();
-            myPlayerInput.Movment.Enable();
+            myPlayerInput.MovmentCont.Enable();
 
         }
         if (myPlayerInput.Movment.enabled)
@@ -50,17 +51,21 @@ public class Follower : MonoBehaviour
         if (myPlayerInput.MovmentTouch.enabled)
         {
             MovmentWithTouch();
+        }
+        if (myPlayerInput.MovmentCont.enabled)
+        {
+            MovmentWithKeyBoard();
 
         }
     }
     private void MovmentWithKeyBoard()
     {
-        if (myPlayerInput.Movment.MoveForward.IsPressed())
+        if (myPlayerInput.Movment.MoveForward.IsPressed() || myPlayerInput.MovmentCont.test.IsPressed())
         {
             Forward();
         }
 
-        if (myPlayerInput.Movment.MoveBackward.IsPressed())
+        if (myPlayerInput.Movment.MoveBackward.IsPressed() || myPlayerInput.MovmentCont.test1.IsPressed())
         {
             BackWard();
         }

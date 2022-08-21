@@ -80,7 +80,7 @@ public class FollowPath : MonoBehaviour
 
 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.black;
         for (int i = 0; i < transform.childCount; i++)

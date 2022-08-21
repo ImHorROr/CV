@@ -42,6 +42,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.plastic
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -61,3 +62,7 @@ crashlytics-build.properties
 Assets/Scripts/2022-07-02 20-32-22.mp4
 Assets/Ultimate 10 Plus Shaders/Materials/Textures/Rock1.tif
 Assets/Ultimate 10 Plus Shaders/Materials/Textures/Rock1_nmp.tif
+Assets/AssetsDownloaded/Ultimate 10 Plus Shaders/Materials/Textures/Rock1.tif
+Assets/AssetsDownloaded/Ultimate 10 Plus Shaders/Materials/Textures/Rock1.tif.meta
+Assets/AssetsDownloaded/Ultimate 10 Plus Shaders/Materials/Textures/Rock1_nmp.tif
+Assets/AssetsDownloaded/Ultimate 10 Plus Shaders/Materials/Textures/Rock1_nmp.tif.meta

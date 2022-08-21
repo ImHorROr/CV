@@ -6,6 +6,9 @@ using UnityEngine;
 public class Details : MonoBehaviour
 {
     public string currentProjectURL { get; set; }
+
+    public GameObject title;
+    public GameObject desc;
     public void CloseDetail()
     {
         GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
@@ -14,16 +17,14 @@ public class Details : MonoBehaviour
     }
     public void OpenLink()
     {
-        Application.OpenURL(currentProjectURL);
+        //Application.OpenURL(currentProjectURL);
     }
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

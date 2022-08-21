@@ -42,26 +42,26 @@ public class DERESolver : MonoBehaviour
     IEnumerator Desolve()
     {
         if (desolved == true || startResolve == true) yield break;
-        material.SetFloat("_Cutoff", Mathf.Lerp(0, 1, t * speed));
-        t += Time.deltaTime;
-        if (material.GetFloat("_Cutoff") >= 1)
-        {
-            desolved = true;
-            t = 0;
-            yield break;
-        }
+        //material.SetFloat("_Cutoff", Mathf.Lerp(0, 1, t * speed));
+        //t += Time.deltaTime;
+        //if (material.GetFloat("_Cutoff") >= 1)
+        //{
+        //    desolved = true;
+        //    t = 0;
+        //    yield break;
+        //}
     }
     void Resolve()
     {
-        t += Time.deltaTime;
-        material.SetFloat("_Cutoff", Mathf.SmoothDamp(material.GetFloat("_Cutoff"),0,ref t, speed));
-        if (material.GetFloat("_Cutoff") <= 0)
-        {
-            desolved = false;
-            startResolve = false;
-            t = 0;
+        //t += Time.deltaTime;
+        //material.SetFloat("_Cutoff", Mathf.SmoothDamp(material.GetFloat("_Cutoff"),0,ref t, speed));
+        //if (material.GetFloat("_Cutoff") <= 0)
+        //{
+        //    desolved = false;
+        //    startResolve = false;
+        //    t = 0;
 
-        }
+        //}
 
     }
     // Update is called once per frame

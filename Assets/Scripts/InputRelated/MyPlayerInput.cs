@@ -136,6 +136,151 @@ public partial class @MyPlayerInput : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""MovmentCont"",
+            ""id"": ""8e03ee2a-e56c-4396-9cec-c21603bf9e6a"",
+            ""actions"": [
+                {
+                    ""name"": ""CloseDetails"",
+                    ""type"": ""Button"",
+                    ""id"": ""35c71f94-0cc9-4473-b42a-afaaef818cef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""test"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e70ecc6-3cde-4b3a-a893-b468f7150f9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""test1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8af9b1a-77a8-46e8-8382-c5db01ab1c95"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""14996f64-a265-4be3-afa2-24ba5320fa16"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99dca85a-112b-415c-ae05-7a96bdaeb7bd"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""617ea2a6-c874-4593-a9b0-f9e06ce1e5c2"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92ca9d7c-d6dc-4cb2-a24f-3de330cd18ed"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseDetails"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b61c805c-80e8-4600-9a7b-1cfac7864b95"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseDetails"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fcdf92ea-855f-4f76-b7da-68e9d7cfb70d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseDetails"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acebd130-6ad8-4167-85fe-7b048cd1aa18"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseDetails"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4fab949-50ac-4b6b-a9c7-177a2fce8766"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""187b4886-b51b-4e2b-a833-7d31121189fa"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40e74d68-b795-433e-909d-64716ea02949"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""MovmentTouch"",
             ""id"": ""5084b976-8918-432e-b300-08e7722e2c8b"",
             ""actions"": [
@@ -707,6 +852,11 @@ public partial class @MyPlayerInput : IInputActionCollection2, IDisposable
         m_Movment_MoveForward = m_Movment.FindAction("MoveForward", throwIfNotFound: true);
         m_Movment_MoveBackward = m_Movment.FindAction("MoveBackward", throwIfNotFound: true);
         m_Movment_MouseLook = m_Movment.FindAction("MouseLook", throwIfNotFound: true);
+        // MovmentCont
+        m_MovmentCont = asset.FindActionMap("MovmentCont", throwIfNotFound: true);
+        m_MovmentCont_CloseDetails = m_MovmentCont.FindAction("CloseDetails", throwIfNotFound: true);
+        m_MovmentCont_test = m_MovmentCont.FindAction("test", throwIfNotFound: true);
+        m_MovmentCont_test1 = m_MovmentCont.FindAction("test1", throwIfNotFound: true);
         // MovmentTouch
         m_MovmentTouch = asset.FindActionMap("MovmentTouch", throwIfNotFound: true);
         m_MovmentTouch_MoveForward = m_MovmentTouch.FindAction("MoveForward", throwIfNotFound: true);
@@ -827,6 +977,55 @@ public partial class @MyPlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public MovmentActions @Movment => new MovmentActions(this);
+
+    // MovmentCont
+    private readonly InputActionMap m_MovmentCont;
+    private IMovmentContActions m_MovmentContActionsCallbackInterface;
+    private readonly InputAction m_MovmentCont_CloseDetails;
+    private readonly InputAction m_MovmentCont_test;
+    private readonly InputAction m_MovmentCont_test1;
+    public struct MovmentContActions
+    {
+        private @MyPlayerInput m_Wrapper;
+        public MovmentContActions(@MyPlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CloseDetails => m_Wrapper.m_MovmentCont_CloseDetails;
+        public InputAction @test => m_Wrapper.m_MovmentCont_test;
+        public InputAction @test1 => m_Wrapper.m_MovmentCont_test1;
+        public InputActionMap Get() { return m_Wrapper.m_MovmentCont; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MovmentContActions set) { return set.Get(); }
+        public void SetCallbacks(IMovmentContActions instance)
+        {
+            if (m_Wrapper.m_MovmentContActionsCallbackInterface != null)
+            {
+                @CloseDetails.started -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnCloseDetails;
+                @CloseDetails.performed -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnCloseDetails;
+                @CloseDetails.canceled -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnCloseDetails;
+                @test.started -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest;
+                @test.performed -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest;
+                @test.canceled -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest;
+                @test1.started -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest1;
+                @test1.performed -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest1;
+                @test1.canceled -= m_Wrapper.m_MovmentContActionsCallbackInterface.OnTest1;
+            }
+            m_Wrapper.m_MovmentContActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CloseDetails.started += instance.OnCloseDetails;
+                @CloseDetails.performed += instance.OnCloseDetails;
+                @CloseDetails.canceled += instance.OnCloseDetails;
+                @test.started += instance.OnTest;
+                @test.performed += instance.OnTest;
+                @test.canceled += instance.OnTest;
+                @test1.started += instance.OnTest1;
+                @test1.performed += instance.OnTest1;
+                @test1.canceled += instance.OnTest1;
+            }
+        }
+    }
+    public MovmentContActions @MovmentCont => new MovmentContActions(this);
 
     // MovmentTouch
     private readonly InputActionMap m_MovmentTouch;
@@ -978,6 +1177,12 @@ public partial class @MyPlayerInput : IInputActionCollection2, IDisposable
         void OnMoveForward(InputAction.CallbackContext context);
         void OnMoveBackward(InputAction.CallbackContext context);
         void OnMouseLook(InputAction.CallbackContext context);
+    }
+    public interface IMovmentContActions
+    {
+        void OnCloseDetails(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
+        void OnTest1(InputAction.CallbackContext context);
     }
     public interface IMovmentTouchActions
     {

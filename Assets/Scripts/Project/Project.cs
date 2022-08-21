@@ -9,6 +9,7 @@ public class Project : ScriptableObject
 {
     public Texture[] images;
     public VideoPlayer videoPlayer;
+    public string title;
     public string desc;
     public string link;
 }

@@ -5,42 +5,26 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] GameObject desktop;
-    [SerializeField] GameObject mobile;
-    Vector2 res;
+    [SerializeField] GameObject gameoverPanel;
+    float time;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        mobile.SetActive(false);
-        desktop.SetActive(false);
+        gameoverPanel.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(res.x +" -- "+ res.y);
-        if(Input.GetKeyDown(KeyCode.S))
+        if(time > 5)
         {
-            res = new Vector2(Screen.width, Screen.height);
+            gameoverPanel.SetActive(true);
 
-            Cheack();
         }
     }
 
-    private void Cheack()
-    {
-        if (res.x <= 960 && res.y <= 600)
-        {
-            mobile.SetActive(true);
-            desktop.SetActive(false);
-        }
-        else
-        {
-            mobile.SetActive(false);
-            desktop.SetActive(true);
-        }
-    }
+   
 }

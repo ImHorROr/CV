@@ -22,6 +22,7 @@ public class SwitchControlsType : MonoBehaviour
         if (myPlayerInput == null) return;
         if (myPlayerInput.MovmentTouch.enabled)
         {
+            if (camera == null) return;
             Vector2 delta = myPlayerInput.MovmentTouch.Look.ReadValue<Vector2>();
             camera.m_VerticalAxis.Value += delta.y * 200 * Time.deltaTime;
             camera.m_HorizontalAxis.Value += delta.x * 200 * Time.deltaTime;
