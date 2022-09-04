@@ -16,8 +16,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Sends messages to gazed GameObject.
@@ -25,9 +28,37 @@ using UnityEngine;
 public class CameraPointer : MonoBehaviour
 {
     [SerializeField] float _maxDistance = 20;
+    private bool isKillable;
     [SerializeField] GameObject _gazedAtObject = null;
     testvr vr;
+    killable killable;
     [SerializeField] LayerMask interactableLayer;
+    [SerializeField]Follower follower;
+    MyPlayerInput inputActions;
+
+    private void Start()
+    {
+        follower = GetComponentInParent<Follower>();
+        inputActions = follower.myPlayerInput;
+        inputActions.MovmentCont.Kill.performed += Shot;
+        inputActions.MovmentCont.zom.performed += zom;
+        print(inputActions);
+    }
+
+    private void zom(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    private void Shot(InputAction.CallbackContext obj)
+    {
+        if(isKillable)
+        {
+            killable.OnPointerClick();
+            
+        }
+    }
+
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -44,19 +75,27 @@ public class CameraPointer : MonoBehaviour
                 // New GameObject.
                 _gazedAtObject = hit.transform.gameObject;
 
-                if(_gazedAtObject.GetComponent<testvr>() != null)
+                if (_gazedAtObject.GetComponent<testvr>() != null)
                 {
                     vr = _gazedAtObject.GetComponent<testvr>();
                 }
-                if (vr == null)
+                if(_gazedAtObject.GetComponent<killable>() != null)
                 {
-                    return;
+                    killable = _gazedAtObject.GetComponent<killable>();
                 }
-                else
+                if (vr != null)
                 {
                     vr.OnPointerExit();
                     _gazedAtObject = hit.transform.gameObject;
                     vr.OnPointerEnter();
+
+                }
+                if (killable != null)
+                {
+                    killable.OnPointerExit();
+                    isKillable = true;
+                    _gazedAtObject = hit.transform.gameObject;
+                    killable.OnPointerEnter();
 
                 }
             }
@@ -64,17 +103,17 @@ public class CameraPointer : MonoBehaviour
         else
         {
             // No GameObject detected in front of the camera.
-            if (vr == null) return;
+            if (vr != null)
             vr.OnPointerExit();
+
+            if (killable != null)
+                killable.OnPointerExit();
 
             //_gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject = null;
         }
 
         // Checks for screen touches.
-        if (Google.XR.Cardboard.Api.IsTriggerPressed)
-        {
-            _gazedAtObject?.SendMessage("OnPointerClick");
-        }
+
     }
 }

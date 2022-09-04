@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd48869e68c443c429b0af75780af11f, type: 3}
+  m_Name: solution
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 2800000, guid: 83bb592a20c29eb4b9a0dc41bbb493d1, type: 3}
+  videoPlayer: {fileID: 0}
+  title: Solution Challenge
+  desc: The Solution Challenge is an annual contest presented by Google that invites
+    students to develop solutions for local community problems using one or more
+    Google products or platforms.
+  link: 

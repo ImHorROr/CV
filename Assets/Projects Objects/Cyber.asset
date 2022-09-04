@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd48869e68c443c429b0af75780af11f, type: 3}
+  m_Name: Cyber
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 2800000, guid: 0467cf2edaba7b24597fbc95da8c93b7, type: 3}
+  - {fileID: 2800000, guid: b4b73b3662b299046b517ce1c3de024b, type: 3}
+  - {fileID: 2800000, guid: 7924b3ba65feca0489da7371f4361fd5, type: 3}
+  - {fileID: 2800000, guid: 581b8b26cafd93946a6392bd9c6155d6, type: 3}
+  - {fileID: 2800000, guid: 17403bf1c2834e34696e8c272a910d63, type: 3}
+  - {fileID: 2800000, guid: 69ddf56b71d3f2e42acf888c9acbbe16, type: 3}
+  videoPlayer: {fileID: 0}
+  title: Cyber Bootcamp
+  desc: 'Bootcamp that the club made with a collaboration with other universities '
+  link: 

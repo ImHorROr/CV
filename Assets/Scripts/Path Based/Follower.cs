@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using PathCreation;
 using PathCreation.Examples;
+using UnityEngine.SceneManagement;
 
 public class Follower : MonoBehaviour
 {
@@ -16,23 +17,46 @@ public class Follower : MonoBehaviour
     public MyPlayerInput myPlayerInput { get; set; }
     SwitchControlsType switchControls;
     EnemyLockOn lockOn;
-
     [SerializeField]float dist;
     Vector3 pos;
+    private int health = 6;
+    [SerializeField] GameObject gameoverPanle;
+
     public void Awake()
     {
         myPlayerInput = new MyPlayerInput();
         myPlayerInput.MovmentCont.Enable();
+        
     }
 
      void Start()
     {
-        switchControls = GetComponent<SwitchControlsType>();
-        transform.position = generatePath.waypoints[0].position;
-        lockOn = GetComponent<EnemyLockOn>();
+        if(gameoverPanle != null)
+        {
 
-        
+        gameoverPanle.SetActive(false);
+        }
+        switchControls = GetComponent<SwitchControlsType>();
+        if(generatePath == null)
+        {
+            generatePath = FindObjectOfType<GeneratePathExample>();
+        }
+        if(path == null)
+        {
+            path = FindObjectOfType<PathCreator>();
+        }
+        transform.position = generatePath.waypoints[0].position;
+        EditDistance();
+        lockOn = GetComponent<EnemyLockOn>();
+        myPlayerInput.MovmentCont.reset.performed += Reset;
+
+
     }
+    private void Reset(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -85,12 +109,20 @@ public class Follower : MonoBehaviour
             }
         }
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
     void Forward()
     {
         dist += Speed * Time.deltaTime;
         transform.position = path.path.GetPointAtDistance(dist);
 
     }
+
+
     void BackWard()
     {
         dist -= Speed * Time.deltaTime;
@@ -101,6 +133,20 @@ public class Follower : MonoBehaviour
         switchControls.Switch(myPlayerInput);
     }
 
+    public void dealDamage(int v)
+    {
+        health -= v;
+        print(health);
+        if(health <= 0)
+        {
+            GameOver();
+        }
+    }
+    public void GameOver()
+    {
+        gameoverPanle.SetActive(true);
+    }
+
     public void Teleport(int selected)
     {
         transform.position = generatePath.projectWaypoints[selected].position;
@@ -108,7 +154,7 @@ public class Follower : MonoBehaviour
     }
     public void EditDistance()
     {
-        lockOn.ResetTarget();
+        lockOn?.ResetTarget();
         dist = path.path.GetClosestDistanceAlongPath(transform.position);
         pos = path.path.GetPointAtDistance(dist);
     }

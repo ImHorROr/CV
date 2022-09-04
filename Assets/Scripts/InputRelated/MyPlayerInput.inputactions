@@ -143,6 +143,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "reset",
+                    "type": "Button",
+                    "id": "37f47a0d-c8f1-4510-bcf6-3b6a330178a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Kill",
+                    "type": "Button",
+                    "id": "b8961acf-052f-474a-bce2-3a023f2f3b5a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "zom",
+                    "type": "Button",
+                    "id": "8d3b3ac6-9acc-4b42-977c-2ec265e52059",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap(tapCount=4)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -159,8 +186,8 @@
                 },
                 {
                     "name": "",
-                    "id": "99dca85a-112b-415c-ae05-7a96bdaeb7bd",
-                    "path": "<Gamepad>/leftShoulder",
+                    "id": "617ea2a6-c874-4593-a9b0-f9e06ce1e5c2",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,8 +197,8 @@
                 },
                 {
                     "name": "",
-                    "id": "617ea2a6-c874-4593-a9b0-f9e06ce1e5c2",
-                    "path": "<Gamepad>/leftTrigger",
+                    "id": "c588a0a1-31f8-43a8-95d8-e1c413d8972c",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -236,8 +263,8 @@
                 },
                 {
                     "name": "",
-                    "id": "187b4886-b51b-4e2b-a833-7d31121189fa",
-                    "path": "<Gamepad>/rightShoulder",
+                    "id": "40e74d68-b795-433e-909d-64716ea02949",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -247,12 +274,78 @@
                 },
                 {
                     "name": "",
-                    "id": "40e74d68-b795-433e-909d-64716ea02949",
-                    "path": "<Gamepad>/rightTrigger",
+                    "id": "1ef10c9a-01ea-4034-9794-6fe75420688e",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "test1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f26fd362-a55e-4161-84c5-aa855cc94c2e",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a9b8227-9085-4c8a-94bb-43b76a21f03a",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a7bf126-e9dc-4163-b972-d1c782862446",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f490ede-75be-4ed8-b192-2d55b26ecb30",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41a0d1fc-ec84-4731-973a-09b529443c81",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6398475-5ebc-4402-ae0e-4475031c94be",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "zom",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

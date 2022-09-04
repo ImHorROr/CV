@@ -32,7 +32,7 @@ public class testvr : MonoBehaviour
         print(gameObject + "exit");
 
     }
-    private void Update()
+    public void Update()
     {
         if(gazeStatus)
         {

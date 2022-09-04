@@ -23,6 +23,19 @@ public class ShowProject : MonoBehaviour
     EnemyLockOn lockOn;
     private float currntTime = Mathf.Infinity;
     private int cooldown = 5;
+
+    bool Visited = false;
+
+    //public event Action visited;
+
+    public Project getProject()
+    {
+        return project;
+    }
+    public bool GetIsVisited()
+    {
+        return Visited;
+    }
     private void Awake()
     {
         lockOn = FindObjectOfType<EnemyLockOn>();
@@ -31,7 +44,6 @@ public class ShowProject : MonoBehaviour
 
     private void Close(InputAction.CallbackContext obj)
     {
-        print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         CloseDetails();
     }
 
@@ -74,18 +86,30 @@ public class ShowProject : MonoBehaviour
         details.currentProjectURL = project.link;
         details.desc.GetComponent<TextMeshProUGUI>().text = project.desc;
         details.title.GetComponent<TextMeshProUGUI>().text = project.title;
-       // DetailsPanel.GetComponentInChildren<TextMeshProUGUI>().text = project.desc;
+        Visited = true;
+        FindObjectOfType<VisitedProjects>().VistiedAProject(getProject());
+        //if(visited != null)
+        //{
+           // visited.Invoke();
+
+        //}
+        // DetailsPanel.GetComponentInChildren<TextMeshProUGUI>().text = project.desc;
     }
     public void CloseDetails()
     {
         //DetailsPanel.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-        details.desc.GetComponent<TextMeshProUGUI>().text = string.Empty;
-        details.title.GetComponent<TextMeshProUGUI>().text = string.Empty;
-        details.currentProjectURL = string.Empty;
-        DetailsPanel.gameObject.SetActive(false);
-        WierdEffects.gameObject.SetActive(false);
+        if(details.enabled == true)
+        {
+            details.desc.GetComponent<TextMeshProUGUI>().text = string.Empty;
+            details.title.GetComponent<TextMeshProUGUI>().text = string.Empty;
+            details.currentProjectURL = string.Empty;
+            DetailsPanel.gameObject.SetActive(false);
+            WierdEffects.gameObject.SetActive(false);
+            lockOn.ResetTarget();
+
+
+        }
         //remove this later it was cusaing an infinte loop with lockon and the events in line 50
-        lockOn.ResetTarget();
     }
     public void NextPhoto()
     {

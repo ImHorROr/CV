@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e351e006534f8c547bd5ae4df35bf142, type: 3}
+  m_Name: SceneWizard_Config
+  m_EditorClassIdentifier: 
+  folderPath: C:/Users/yazan/Desktop/D/C3 Projects/CV/Assets/Scenes
+  allowSubfolders: 1
+  scenes:
+  - name: CM
+    path: Assets/Scenes\CM.unity
+    parentFolder: Scenes
+  - name: Jer MVR2
+    path: Assets/Scenes\Jer MVR2.unity
+    parentFolder: Scenes
+  - name: Jer. VR World
+    path: Assets/Scenes\Jer. VR World.unity
+    parentFolder: Scenes
+  - name: SampleScene
+    path: Assets/Scenes\SampleScene.unity
+    parentFolder: Scenes
+  - name: Shader
+    path: Assets/Scenes\Shader.unity
+    parentFolder: Scenes
+  - name: Test 2-OldPath
+    path: Assets/Scenes\Test 2-OldPath.unity
+    parentFolder: Scenes
+  - name: Test 3
+    path: Assets/Scenes\Test 3.unity
+    parentFolder: Scenes
+  - name: test cont
+    path: Assets/Scenes\test cont.unity
+    parentFolder: Scenes
+  - name: UI
+    path: Assets/Scenes\UI.unity
+    parentFolder: Scenes
+  - name: VR
+    path: Assets/Scenes\VR.unity
+    parentFolder: Scenes
+  - name: Zombies
+    path: Assets/Scenes\Zombies.unity
+    parentFolder: Scenes
